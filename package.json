@@ -1,0 +1,42 @@
+{
+  "name": "@xsyx/mini-router",
+  "version": "0.0.1-beta.4",
+  "description": "",
+  "main": "lib/bundle.js",
+  "module": "esm/bundle.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "check": "npm run lintfix && npm run prettier",
+    "lintfix": "eslint src types --ext .ts --fix",
+    "prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,ts}\"",
+    "pub": "cnpm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiny-CLI-Template/vanilla-rollup-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tiny-CLI-Template/vanilla-rollup-ts/issues"
+  },
+  "homepage": "https://github.com/Tiny-CLI-Template/vanilla-rollup-ts#readme",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.1",
+    "rollup": "^2.52.1",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {}
+}
