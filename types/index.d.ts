@@ -25,5 +25,6 @@ interface DialogMiniRouterMethods {
   find: (name: string) => ComponentMapItem | undefined
   registerReplacePoint: (renderComponentRef: VueComponentRef) => void
   setComponentMap: (val: ComponentMap) => void
+  getRouterRecords: () => RouterRecords
 }
 export function useMiniRouter(): DialogMiniRouterMethods

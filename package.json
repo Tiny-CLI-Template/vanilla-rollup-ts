@@ -1,6 +1,6 @@
 {
   "name": "@xsyx/mini-router",
-  "version": "0.0.1-beta.4",
+  "version": "0.0.1-beta.5",
   "description": "",
   "main": "lib/bundle.js",
   "module": "esm/bundle.js",

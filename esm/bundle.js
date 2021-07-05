@@ -1,4 +1,4 @@
-/* You version is:pkg-version Build Date:2021-6-21 11:40:53*/
+/* You version is:pkg-version Build Date:2021-7-5 10:4:15*/
 /* 用于保存弹窗ref */
 let routerView = null;
 /* 渲染点中将会渲染的组件 */
@@ -95,6 +95,9 @@ function useMiniRouter() {
     const has = (name) => {
         return Object.prototype.hasOwnProperty.call(componentMap, name);
     };
+    const getRouterRecords = () => {
+        return routerRecords;
+    };
     const miniRouteWillDestroy = () => {
         routerView = null;
         componentMap = null;
@@ -109,7 +112,8 @@ function useMiniRouter() {
         back,
         find,
         registerReplacePoint,
-        setComponentMap
+        setComponentMap,
+        getRouterRecords
     };
 }
 

@@ -104,6 +104,9 @@ export function useMiniRouter() {
   const has = (name: string) => {
     return Object.prototype.hasOwnProperty.call(componentMap, name)
   }
+  const getRouterRecords = () => {
+    return routerRecords
+  }
   const miniRouteWillDestroy = () => {
     routerView = null
     componentMap = null
@@ -118,6 +121,7 @@ export function useMiniRouter() {
     back,
     find,
     registerReplacePoint,
-    setComponentMap
+    setComponentMap,
+    getRouterRecords
   }
 }
