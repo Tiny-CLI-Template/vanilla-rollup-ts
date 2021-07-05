@@ -1,7 +1,7 @@
 /* prod 配置 */
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
+import typescript from "rollup-plugin-typescript2";
 
 export default {
     input: 'src/index.ts',
@@ -20,7 +20,10 @@ export default {
     plugins: [
       nodeResolve(),
       commonjs(),
-      typescript()
+      typescript({
+        tsconfig: "tsconfig.json",
+        useTsconfigDeclarationDir: true,
+    })
     ],
 };
 

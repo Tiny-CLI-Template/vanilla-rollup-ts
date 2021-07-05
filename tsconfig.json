@@ -14,6 +14,8 @@
       "node_modules/@types",
       "types"
     ],
+    "declaration": true,
+    "declarationDir": "types"
   },
   "include": ["./src", "types"]
 }
