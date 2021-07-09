@@ -24,17 +24,15 @@ declare type ComponentMap = IComponentMaps | null
 declare type RouterRecords = Array<string>
 declare type VueComponentRef = Record<string, any> | null
 declare type CallBack = null | ((params?: any) => void)
-interface DialogMiniRouterMethods {
-  has: (name: string) => boolean
-  next: (options: ComponentMeta) => void
-  back: (params?: any) => void
-  find: (name: string) => ComponentMapItem | undefined
-  registerReplacePoint: (renderComponentRef: VueComponentRef) => void
-  setComponentMap: (val: ComponentMap) => void
-  getRouterRecords: () => RouterRecords
-}
-
-
+// interface DialogMiniRouterMethods {
+//   has: (name: string) => boolean
+//   next: (options: ComponentMeta) => void
+//   back: (params?: any) => void
+//   find: (name: string) => ComponentMapItem | undefined
+//   registerReplacePoint: (renderComponentRef: VueComponentRef) => void
+//   setComponentMap: (val: ComponentMap) => void
+//   getRouterRecords: () => RouterRecords
+// }
 
 /* 用于保存弹窗ref */
 let routerView: VueComponentRef = null
@@ -64,7 +62,7 @@ const routerRecords: RouterRecords = []
 //   }
 // );
 
-function useMiniRouter() {
+export function useMiniRouter() {
   /**
    * 渲染下一个组件
    * @param {Object} options
@@ -94,6 +92,7 @@ function useMiniRouter() {
     /* 渲染目标组件 */
     routerView.update({
       component: componentMap[name].component,
+      title: componentMap[name].title,
       isCache,
       params,
       name
@@ -117,6 +116,7 @@ function useMiniRouter() {
     /* 调用挂载替换点的更新方法 */
     routerView.update({
       component: componentMap[to].component,
+      title: componentMap[to].title,
       name: to
     })
     if (callback) {
@@ -166,5 +166,3 @@ function useMiniRouter() {
     getRouterRecords
   }
 }
-
-export default useMiniRouter()

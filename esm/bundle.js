@@ -1,4 +1,13 @@
-/* You version is:pkg-version Build Date:2021-7-5 16:36:56*/
+/* You version is:pkg-version Build Date:2021-7-5 19:19:16*/
+// interface DialogMiniRouterMethods {
+//   has: (name: string) => boolean
+//   next: (options: ComponentMeta) => void
+//   back: (params?: any) => void
+//   find: (name: string) => ComponentMapItem | undefined
+//   registerReplacePoint: (renderComponentRef: VueComponentRef) => void
+//   setComponentMap: (val: ComponentMap) => void
+//   getRouterRecords: () => RouterRecords
+// }
 /* 用于保存弹窗ref */
 let routerView = null;
 /* 渲染点中将会渲染的组件 */
@@ -53,6 +62,7 @@ function useMiniRouter() {
         /* 渲染目标组件 */
         routerView.update({
             component: componentMap[name].component,
+            title: componentMap[name].title,
             isCache,
             params,
             name
@@ -76,6 +86,7 @@ function useMiniRouter() {
         /* 调用挂载替换点的更新方法 */
         routerView.update({
             component: componentMap[to].component,
+            title: componentMap[to].title,
             name: to
         });
         if (callback) {
@@ -125,6 +136,5 @@ function useMiniRouter() {
         getRouterRecords
     };
 }
-var index = useMiniRouter();
 
-export default index;
+export { useMiniRouter };

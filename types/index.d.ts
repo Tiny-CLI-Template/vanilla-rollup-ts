@@ -17,7 +17,7 @@ declare type ComponentMap = IComponentMaps | null;
 declare type RouterRecords = Array<string>;
 declare type VueComponentRef = Record<string, any> | null;
 declare type CallBack = null | ((params?: any) => void);
-declare const _default: {
+export declare function useMiniRouter(): {
     has: (name: string) => boolean;
     next: (options: ComponentMeta) => void;
     back: (params?: any) => void;
@@ -26,4 +26,4 @@ declare const _default: {
     setComponentMap: (val: ComponentMap) => void;
     getRouterRecords: () => RouterRecords;
 };
-export default _default;
+export {};
