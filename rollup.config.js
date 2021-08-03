@@ -28,7 +28,7 @@ export default {
     })
   ]
 }
-
+/* 已失效，terser将去掉注释 */
 function injectDateForBuild() {
   return new Promise((resolve) => {
     const v = new Date()
