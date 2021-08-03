@@ -19,4 +19,4 @@ vanilla-rollup-ts（用于写utils时纯净的rollup+ts配置）
 # Branch 
 
  - main 分支 模板示例
- - tag  分支 用于配合脚手架模板拉取纯净配置
+ - daily  分支 用于配合脚手架模板拉取纯净配置
